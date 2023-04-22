@@ -67,7 +67,7 @@ header .header-search input {
 
 /* Add styling to the buttons */
 header .buttons button {
-  background-color: #0077b6;
+  background-color: #21007a;
   border: none;
   color: white;
   font-weight: bold;
@@ -95,5 +95,13 @@ header .header-wallet button {
 
 header .buttons button:hover,
 header .header-wallet button:hover {
-  color: #0077b6;
+  color: #3552d3;
+}
+
+input {
+  min-width: 200px;
+}
+
+button {
+  min-width: 40px;
 }
