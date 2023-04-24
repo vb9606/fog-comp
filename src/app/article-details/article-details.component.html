@@ -7,9 +7,12 @@
           <div class="article-box" *ngFor="let article of recommendedArticles">
             <img [src]="article.imageUrl" alt="Article image" class="article-image">
             <div class="article-details">
-              <h3 class="article-title">{{ article.title }}</h3>
-              <p class="article-category">{{ article.category }}</p>
-              <p class="article-rating">Rating: {{ article.rating }}</p>
+                <p class="article-category">{{ article.category }}</p>
+                <h3 class="article-title">{{ article.title }}</h3>
+                <div class ="ratings"> 
+                    <mat-icon class="star-style">star</mat-icon>
+                    <p class="article-rating">{{ article.rating }}</p>
+                </div>
             </div>
           </div>
         </div>
@@ -36,7 +39,10 @@
             <div class="article-details">
               <h3 class="article-title">{{ article.title }}</h3>
               <p class="article-category">{{ article.category }}</p>
-              <p class="article-rating">Rating: {{ article.rating }}</p>
+              <div class ="ratings"> 
+                <mat-icon class="star-style">star</mat-icon>
+                <p class="article-rating">{{ article.rating }}</p>
+                </div>
             </div>
           </div>
         </div>

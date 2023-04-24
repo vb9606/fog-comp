@@ -67,20 +67,21 @@ footer {
   height: 50%;
   padding: 0.5rem;
   background-color: white;
+  margin-top: 10px;
+  min-height: 68px; /* set a minimum height for the container */
 }
 
 .article-title {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: auto;
+  padding-left: 0.5rem;
 }
 
 .article-category {
   font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-.article-rating {
-  font-weight: bold;
+  padding-left: 0.5rem;
+  margin-top: auto; /* push the category to the bottom of the container */
+  margin-bottom: 5px; /* add margin between the category and stars */
 }
 
 .sectionMiddle {
@@ -102,7 +103,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(233, 233, 255);
+  background-color: #F6F3FC;
   
 }
 
@@ -131,7 +132,26 @@ footer {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
-  background-color: #3552d3;
+  background-color: #535CE8;
   color: white;
   font-weight: bold;
+}
+
+.star-style {
+  color: #F3C63F;
+  -webkit-text-stroke: 0.2px black;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+}
+
+.article-rating {
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
 }

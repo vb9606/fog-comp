@@ -10,7 +10,7 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
 import { AuthorsProfileComponent } from './authors-profile/authors-profile.component';
 import { PublishArticleComponent } from './publish-article/publish-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
-import { RatingModule } from 'ng-starrating';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { RatingModule } from 'ng-starrating';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RatingModule
+    MatIconModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
