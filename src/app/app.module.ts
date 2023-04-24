@@ -10,6 +10,7 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
 import { AuthorsProfileComponent } from './authors-profile/authors-profile.component';
 import { PublishArticleComponent } from './publish-article/publish-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditArticleComponent } from './edit-article/edit-article.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,47 @@
 <body>
     <app-header>Header content</app-header>
-    <main>Article details works!
-        <h1>Krneki</h1>
-        <p>alalal</p>
+    <main>
+      <section class="section">
+        <h2 class="section__title">Recommended articles</h2>
+        <div class="article-box-container">
+          <div class="article-box" *ngFor="let article of recommendedArticles">
+            <img [src]="article.imageUrl" alt="Article image" class="article-image">
+            <div class="article-details">
+              <h3 class="article-title">{{ article.title }}</h3>
+              <p class="article-category">{{ article.category }}</p>
+              <p class="article-rating">Rating: {{ article.rating }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section class="sectionMiddle">
+        <div class="left-side">
+            <div class="left-sideCenter">
+                <h1 class="middle-title">{{ currentArticle.title }}</h1>
+                <p class="middle-description"> {{currentArticle.summary}}</p>
+                <button class="middle-button">Explore more</button>
+            </div>
+        </div>
+        <div class="right-side">
+            <img [src]="currentArticle.imageUrl" alt="Article image" class="middle-image">
+        </div>    
+      </section>
+  
+      <section class="section">
+        <h2 class="section__title">Popular articles</h2>
+        <div class="article-box-container">
+          <div class="article-box" *ngFor="let article of popularArticles">
+            <img [src]="article.imageUrl" alt="Article image" class="article-image">
+            <div class="article-details">
+              <h3 class="article-title">{{ article.title }}</h3>
+              <p class="article-category">{{ article.category }}</p>
+              <p class="article-rating">Rating: {{ article.rating }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <app-footer>Footer content</app-footer>
-</body>
+  </body>
+  
