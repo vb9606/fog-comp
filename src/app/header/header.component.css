@@ -19,6 +19,7 @@ header .header-logo img {
 
 header .header-profile img {
   height: 90%;
+  cursor: pointer;
 }
 
 header .buttons button,
@@ -67,35 +68,30 @@ header .header-search input {
 
 /* Add styling to the buttons */
 header .buttons button {
-  background-color: #21007a;
   border: none;
-  color: white;
   font-weight: bold;
-  padding: 5px 10px;
+  padding: 20px 5px;
   border-radius: 5px;
   cursor: pointer;
-}
-
-header .header-wallet button {
-  border: none;
-  color: white;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
-header .buttons button,
-header .header-wallet button {
   background-color: white; /* Set the background color to white */
   font-size: 13px; /* Set the font size to 14px */
   color: gray;
 }
 
-header .buttons button:hover,
-header .header-wallet button:hover {
-  color: #3552d3;
+header .header-wallet button {
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 20px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #F1F2FD;
+  font-size: 13px; /* Set the font size to 14px */
+  color: #737AEC;
+}
+
+header .buttons button:hover {
+  color: #737AEC;
 }
 
 input {
@@ -104,4 +100,8 @@ input {
 
 button {
   min-width: 40px;
+}
+
+.walletIcon {
+  margin-right: 5px;
 }

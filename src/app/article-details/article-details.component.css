@@ -155,3 +155,25 @@ footer {
   display: inline-block;
   vertical-align: middle;
 }
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.view-all {
+  font-size: 0.8rem;
+  color: blue;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.middle-link-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3rem;
+  margin-top: 1rem;
+  
+}

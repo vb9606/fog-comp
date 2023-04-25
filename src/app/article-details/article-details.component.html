@@ -2,19 +2,28 @@
     <app-header>Header content</app-header>
     <main>
       <section class="section">
-        <h2 class="section__title">Recommended articles</h2>
+        <div class="section-header">
+          <h2 class="section__title">Recommended articles</h2>
+          <a href="#" class="view-all">View all <mat-icon>keyboard_arrow_right</mat-icon></a>
+        </div>
         <div class="article-box-container">
           <div class="article-box" *ngFor="let article of recommendedArticles">
             <img [src]="article.imageUrl" alt="Article image" class="article-image">
             <div class="article-details">
-                <p class="article-category">{{ article.category }}</p>
-                <h3 class="article-title">{{ article.title }}</h3>
-                <div class ="ratings"> 
-                    <mat-icon class="star-style">star</mat-icon>
-                    <p class="article-rating">{{ article.rating }}</p>
-                </div>
+              <p class="article-category">{{ article.category }}</p>
+              <h3 class="article-title">{{ article.title }}</h3>
+              <div class="ratings">
+                <mat-icon class="star-style">star</mat-icon>
+                <p class="article-rating">{{ article.rating }}</p>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+      
+      <section class="section">
+        <div class="middle-link-container">
+          <a href="#" class="view-all">View all <mat-icon>keyboard_arrow_right</mat-icon></a>
         </div>
       </section>
   
@@ -32,17 +41,20 @@
       </section>
   
       <section class="section">
-        <h2 class="section__title">Popular articles</h2>
+        <div class="section-header">
+          <h2 class="section__title">Popular articles</h2>
+          <a href="#" class="view-all">View all <mat-icon>keyboard_arrow_right</mat-icon></a>
+        </div>
         <div class="article-box-container">
           <div class="article-box" *ngFor="let article of popularArticles">
             <img [src]="article.imageUrl" alt="Article image" class="article-image">
             <div class="article-details">
               <h3 class="article-title">{{ article.title }}</h3>
               <p class="article-category">{{ article.category }}</p>
-              <div class ="ratings"> 
+              <div class="ratings">
                 <mat-icon class="star-style">star</mat-icon>
                 <p class="article-rating">{{ article.rating }}</p>
-                </div>
+              </div>
             </div>
           </div>
         </div>
