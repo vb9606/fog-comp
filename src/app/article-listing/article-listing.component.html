@@ -1,5 +1,20 @@
 <body>
     <app-header>Header content</app-header>
-    <main>Article listing works!</main>
+    <main>
+      <h1>Article listing works!</h1>
+        <div>
+          <ejs-tab cssClass="tab_content" class="HeaderText">
+            <e-tabitems>
+              <e-tabitem  [header]="tabHeaderText[0]" [content]="tabContentText[0]">
+
+              </e-tabitem>
+              <e-tabitem [header]="tabHeaderText[1]" [content]="tabContentText[1]">
+
+              </e-tabitem>
+            </e-tabitems>
+          </ejs-tab>
+        </div>
+
+    </main>
     <app-footer>Footer content</app-footer>
 </body>

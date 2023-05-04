@@ -3,4 +3,5 @@ export interface Article {
     category: string;
     rating: number;
     imageUrl: string;
+    summary: string;
   }

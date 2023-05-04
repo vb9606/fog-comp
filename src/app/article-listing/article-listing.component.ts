@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./article-listing.component.css']
 })
 export class ArticleListingComponent {
-
+  public tabHeaderText : Object[] = [
+    {text : 'Article Description'},
+    {text : 'More from this author'}
+  ];
+  public tabContentText : string[] = [
+      "DESCRIPTION TEXT",
+      "MORE FROM THIS"
+  ]
 }

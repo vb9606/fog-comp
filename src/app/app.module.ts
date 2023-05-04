@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { TabModule } from '@syncfusion/ej2-angular-navigations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -24,7 +24,8 @@ import { EditArticleComponent } from './edit-article/edit-article.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TabModule
   ],
   providers: [],
   bootstrap: [AppComponent]
