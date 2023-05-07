@@ -1,0 +1,37 @@
+<body>
+    <app-header>Header content</app-header>
+    <main>
+        <section class="section1">
+            <div class="author-info">
+                <div class="profile-picture">
+                    <mat-icon class="large-icon">account_circle</mat-icon>
+                </div>
+                <div class="author-details">
+                    <h2 class="author-name">{{ author.name }}</h2>
+                    <p class="author-role">{{ author.role }}</p>
+                    <p class="location-time">{{ author.location }}, {{ author.time }}</p>
+                </div>
+              </div>
+              <div class="overview">
+                <h3 class="overview-title">Overview</h3>
+                <p class="author-overview">{{ author.overview }}</p>
+              </div>
+              <div class="author-stats">
+                <p class="rating">Rating: {{ author.rating }}</p>
+                <p class="reviews">Reviews: {{ author.reviews }}</p>
+                <p class="courses">Courses: {{ author.courses }}</p>
+                <p class="edits">Edits: {{ author.edits }}</p>
+              </div>
+        </section>
+        <section class="section2">
+
+        </section>
+        <section class="section3">
+
+        </section>
+        <section class="section4">
+
+        </section>
+    </main>
+    <app-footer>Footer content</app-footer>
+</body>
