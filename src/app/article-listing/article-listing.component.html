@@ -2,8 +2,38 @@
     <app-header>Header content</app-header>
     <main>
       <h1>Article listing works!</h1>
+      <section>
         <div>
-          <ejs-tab cssClass="tab_content" class="HeaderText">
+          <h1 class="middle-title">{{ currentArticle.title }}</h1>
+        </div>
+        <div class="ratings left-side">
+          <p class="article-rating">{{ currentArticle.rating }} | {{ currentArticle.author }}</p>
+        </div>
+        <div class="right-side">
+          <button class="middle-button">
+            <img src="../../assets/images/wallet.png"  alt="Image" />
+            <span>Share</span>
+          </button>
+          <button class="middle-button">
+            <img src="../../assets/images/wallet.png"  alt="Image" />
+            <span>Download</span>
+          </button>
+        </div>
+      </section>
+      <section class="sectionMiddle">
+        <div class="left-side">
+          <img [src]="currentArticle.imageUrl" alt="Article image" class="middle-image">
+        </div>
+        <div class="right-side">
+          <div class="left-sideCenter image-stack">
+            <img src="../../assets/images/wallet.png"  alt="Image" />
+            <img src="../../assets/images/wallet.png"  alt="Image" />
+          </div>
+        </div>
+      </section>
+
+        <div>
+          <ejs-tab cssClass="tab_content">
             <e-tabitems>
               <e-tabitem  [header]="tabHeaderText[0]" [content]="tabContentText[0]">
 
@@ -14,6 +44,24 @@
             </e-tabitems>
           </ejs-tab>
         </div>
+        <section class="section">
+          <div class="section-header">
+            <h2 class="section__title">Related articles</h2>
+            <a href="#" class="view-all">View all</a>
+          </div>
+          <div class="article-box-container">
+            <div class="article-box" *ngFor="let article of relatedArticles">
+              <img [src]="article.imageUrl" alt="Article image" class="article-image">
+              <div class="article-details">
+                <p class="article-category">{{ article.category }}</p>
+                <h3 class="article-title">{{ article.title }}</h3>
+                <div class="ratings">
+                  <p class="article-rating">{{ article.rating }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
     </main>
     <app-footer>Footer content</app-footer>
