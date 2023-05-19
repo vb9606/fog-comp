@@ -10,6 +10,7 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
 import { AuthorsProfileComponent } from './authors-profile/authors-profile.component';
 import { PublishArticleComponent } from './publish-article/publish-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';;
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { EditArticleComponent } from './edit-article/edit-article.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TabModule
+    TabModule,
+    NgxDropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent]

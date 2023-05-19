@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Article } from '../interfaces/article';
+import { Review } from '../interfaces/article';
 
 @Component({
   selector: 'app-article-listing',
@@ -291,8 +292,19 @@ export class ArticleListingComponent {
 
     ];
 
+    reviews: Review[] = [
+      {
+        rating: 4.9,
+        author: 'Klara Weaver',
+        authorImage: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png',
+        review: 'Electric fish are some of the most unique creatures on the planet. With the ability to generate and sense electric fields, these fish have adapted to life in low-light or murky environments and use their electric sense to navigate, communicate, and hunt for prey.'
+      }
+    ];
+
     relatedArticles: Article[];
     currentArticle: any = this.articles[0];
+
+    currentArticleReviewes: any = this.reviews[0];
 
     constructor() {
       this.relatedArticles = this.getRandomArticles(4);
