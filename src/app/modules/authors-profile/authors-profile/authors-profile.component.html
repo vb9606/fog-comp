@@ -1,37 +1,72 @@
 <body>
     <app-header>Header content</app-header>
     <main>
-        <section class="section1">
-            <div class="author-info">
-                <div class="profile-picture">
-                    <mat-icon class="large-icon">account_circle</mat-icon>
-                </div>
-                <div class="author-details">
-                    <h2 class="author-name">{{ author.name }}</h2>
-                    <p class="author-role">{{ author.role }}</p>
-                    <p class="location-time">{{ author.location }}, {{ author.time }}</p>
-                </div>
+        <div class ="leftOnes">
+          <section class="section1">
+              <div class="author-info">
+                  <div class="profile-picture">
+                      <mat-icon class="large-icon">account_circle</mat-icon>
+                  </div>
+                  <div class="author-details">
+                      <h2 class="author-name">{{ author.name }}</h2>
+                      <p class="author-role">{{ author.role }}</p>
+                      <p class="location-time"> <mat-icon class="location-time1"> location_on</mat-icon> {{ author.location }}, {{ author.time }}</p>
+                      <div class="author-buttons">
+                          <button *ngIf="author.role == 'Author/Editor' || author.role == 'Author'" class="author-button">Author</button>
+                          <button *ngIf="author.role == 'Author/Editor' || author.role == 'Editor'" class="editor-button">Editor</button>
+                      </div>
+                  </div>
               </div>
               <div class="overview">
-                <h3 class="overview-title">Overview</h3>
-                <p class="author-overview">{{ author.overview }}</p>
+                  <h3 class="overview-title">Overview</h3>
+                  <p class="author-overview">{{ author.overview }}</p>
               </div>
               <div class="author-stats">
-                <p class="rating">Rating: {{ author.rating }}</p>
-                <p class="reviews">Reviews: {{ author.reviews }}</p>
-                <p class="courses">Courses: {{ author.courses }}</p>
-                <p class="edits">Edits: {{ author.edits }}</p>
+                <div class="rating-box">
+                  <p class="rating">Rating</p>
+                  <p class="rating-rating">{{ author.rating }}</p>
+                </div>
+                <div class="review-box">
+                  <p class="reviews">Reviews</p>
+                  <p class="reviews-reviews">{{ author.reviews }}</p>
+                </div>
+                <div class="courses-box">
+                  <p class="courses">Courses</p>
+                  <p class="courses-courses">{{ author.courses }}</p>
+                </div>
+                <div class="edits-box">
+                  <p class="edits">Edits</p>
+                  <p class="edits-edits">{{ author.edits }}</p>
+                </div>
               </div>
-        </section>
-        <section class="section2">
+          </section>
+          <section class="section2">
+            <div class="titleSection2">
+              <h3 class="titleArticle">Articles</h3>
+            </div>  
+            <mat-form-field>
+              <mat-label>Choose an option</mat-label>
+              <mat-select>
+                <mat-option value="option1">Sort by: newest</mat-option>
+                <mat-option value="option2">Sort by: oldest</mat-option>
+                <mat-option value="option3">Sort by: best rating</mat-option>
+                <mat-option value="option4">Sort by: worst rating</mat-option>
+              </mat-select>
+          </mat-form-field>
+            <div class="firstArticle">
 
-        </section>
-        <section class="section3">
+            </div>
+            <div class="secondArticle">
 
-        </section>
-        <section class="section4">
+            </div>
+          </section>
+        </div>
+        <div class = "rightOne">
+          <section class="section4">
+        
 
-        </section>
+          </section>
+        </div>
     </main>
     <app-footer>Footer content</app-footer>
 </body>

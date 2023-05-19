@@ -252,8 +252,43 @@ export class ArticleListingComponent {
         rating: 4.9,
         imageUrl: 'https://www.sciencenewsforstudents.org/wp-content/uploads/2021/05/1030_ElectricFish.jpg',
         summary: 'Electric fish are some of the most unique creatures on the planet. With the ability to generate and sense electric fields, these fish have adapted to life in low-light or murky environments and use their electric sense to navigate, communicate, and hunt for prey.'
+      },
+      {
+        title: "The Fascinating World of Ants",
+        category: "Insects",
+        rating: 4.7,
+        imageUrl: "https://www.example.com/ants.jpg",
+        summary: "Ants are highly organized social insects that live in colonies. They exhibit remarkable behaviors such as division of labor, complex communication systems, and impressive nest-building abilities."
+      },
+      {
+        title: "Butterflies: Nature's Colorful Wonders",
+        category: "Insects",
+        rating: 4.8,
+        imageUrl: "https://www.example.com/butterflies.jpg",
+        summary: "Butterflies are known for their vibrant colors and delicate wings. They undergo a fascinating transformation from caterpillars to butterflies through the process of metamorphosis."
+      },
+      {
+        title: "The Mighty Beetles: Nature's Tiny Titans",
+        category: "Insects",
+        rating: 4.6,
+        imageUrl: "https://www.example.com/beetles.jpg",
+        summary: "Beetles are the largest group of insects, with incredible diversity in terms of species and adaptations. They can be found in various habitats worldwide and play essential roles in ecosystems."
+      },
+      {
+        title: "The Secret Life of Termites",
+        category: "Insects",
+        rating: 4.5,
+        imageUrl: "https://www.example.com/termites.jpg",
+        summary: "Termites are social insects known for their ability to build complex and towering mounds. They play crucial roles in breaking down dead plant material and are often considered pests in human settlements."
+      },
+      {
+        title: "The Extraordinary World of Dragonflies",
+        category: "Insects",
+        rating: 4.9,
+        imageUrl: "https://www.example.com/dragonflies.jpg",
+        summary: "Dragonflies are agile and colorful insects that are excellent flyers. They inhabit various aquatic and terrestrial environments and are important predators, feeding on mosquitoes and other small insects."
       }
-    
+  
 ];
 
 recommendedArticles: Article[];

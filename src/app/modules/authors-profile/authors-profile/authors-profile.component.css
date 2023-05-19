@@ -6,82 +6,222 @@ body {
   
   main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex: 1; /* Set the main content area to take up all remaining space */
+    margin: 0 auto;
     margin-bottom: 3rem;
     margin-top: 3rem;
     height: 100%;
+    width: 80%;
+  }
+
+  .leftOnes {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 66%;
+    margin: 0 auto;
+    height: 90vh;
+    margin-right: 10px
   }
   
   footer {
     margin-top: auto; /* Push the footer to the bottom by setting auto margin on top */
   }
 
+  .author-info, .author-stats, .overview {
+    flex: 1 0 auto;
+  }
+
+  .author-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 50%;
+    max-height: 50%;
+    text-align: left;
+    width: 100%;
+  }
+
+  .profile-picture {
+    flex: 1 0 auto;
+    height: 100px;
+    width: 100px;
+    margin-left: 20px;
+    margin-right: 10px;
+    max-width: 100px;
+  }
+
+  .large-icon {
+    font-size: 100px;
+    height: 100px;
+    width: 100px;
+    color: #535CE9;
+  }
+
+  .author-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+
+  .author-stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 25%;
+    max-height: 25%;
+    text-align: left;
+  }
+
+  .overview {
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .section1 {
+    height: 30vh;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    margin: 0 auto; 
+    margin-bottom: 0.7px;
+  }
+
+  .section2 {
+    height: 60vh;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    margin: 0 auto; 
+    margin-bottom: 0.7px;
+  }
+
   .section1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     flex: 1;
-    width: 80%;
-    margin: 0 auto;
-    height: 30vh;
-    border: 1px solid #ddd;
-    border-radius: 1px;
-  }
-  
-  .author-info {
-    display: flex;
-    align-items: center;
     margin-bottom: 20px;
   }
-  
-  .profile-picture {
-    font-size: 20px;
-    margin-right: 20px;
+
+  .author-name, .author-role, .location-time {
+    all: unset;
+    margin: 1px;
   }
-  
-  .author-details {
-    text-align: left;
-  }
-  
+
   .author-name {
-    font-size: 24px;
-    margin-bottom: 5px;
-  }
-  
-  .author-role {
-    font-size: 18px;
-    margin-bottom: 5px;
-  }
-  
-  .location-time {
-    font-size: 16px;
-    color: gray;
-    margin-bottom: 10px;
-  }
-  
-  .overview-title {
+    font-weight: bold;
     font-size: 20px;
+  }
+
+  .author-role {
+    font-size: 13px;
+    color: #8C8D8F;
+  }
+
+  .location-time {
+    font-size: 10px;
+    color: #5B5E63;
+  }
+
+  .author-button {
+    margin-top: 5px;
+    margin-right: 5px;
+    border: 0;
+    padding: 5px;
+    font-size: 10px;
+    background-color: #F0EFFD;
+    color: #555AE9;
+  }
+
+  .editor-button {
+    margin-top: 5px;
+    border: 0;
+    padding: 5px;
+    font-size: 10px;
+    background-color: #FFF5F3;
+    color: #D79B83;
+  }
+
+  /*it's got to have its owns style because at the first location-time i unset all the styles*/
+  .location-time1 {
+    font-size: 10px;
+    height: 10px;
+    width: 10px;
+    color: #5B5E63;
+  }
+
+  .rightOne{
+    width: 33%;
+    margin: 0 auto;
+    height: 50vh;
+    margin-left: 10px
+  }
+
+  .overview {
+    display: flex;
+    flex-direction: column;
+    height: 25%;
+    text-align: left;
+    margin-left: 30px;
+    margin-right: 30px; 
+  }
+
+  .overview-title {
+    all: unset;
+    font-size: 20px;
+    font-weight: bold;
     margin-bottom: 5px;
   }
-  
+
   .author-overview {
-    font-size: 16px;
-    text-align: justify;
-    margin-bottom: 20px;
+    all: unset;
+    font-size: 11px;
+    color: #8C8D8F;
+    margin-left: 3px;
   }
-  
+
   .author-stats {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    flex: 1 0 auto;
+    min-height: 25%;
+    max-height: 25%;
+    width: 100%;
   }
-  
-  .rating,
-  .reviews,
-  .courses,
-  .edits {
-    font-size: 16px;
+
+  .rating-box, .review-box, .courses-box, .edits-box {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    margin-left: 35px;  
+    width: 10%;
   }
-  
-  
+
+  .rating, .reviews, .courses, .edits {
+    all: unset;
+    flex: 1 0 auto;
+    font-size: 12px;
+    color: #5B5E63;
+  }
+
+  .rating-rating, .reviews-reviews, .courses-courses, .edits-edits {
+    all: unset;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 28px;
+  }
+
+  .section4 {
+    height: 45vh;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 1px;
+    margin: 0 auto; 
+    background-color: #FAFAFC;
+  }

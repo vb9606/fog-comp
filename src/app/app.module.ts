@@ -11,6 +11,10 @@ import { AuthorsProfileComponent } from './modules/authors-profile/authors-profi
 import { EditArticleComponent } from './modules/edit-article/edit-article/edit-article.component'
 import { PublishArticleComponent } from './modules/publish-article/publish-article/publish-article.component'
 import { MatIconModule } from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     AppRoutingModule,
     MatIconModule,
-
+    MatSelectModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
