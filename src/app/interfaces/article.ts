@@ -4,4 +4,5 @@ export interface Article {
     rating: number;
     imageUrl: string;
     summary: string;
+    date: Date;
   }

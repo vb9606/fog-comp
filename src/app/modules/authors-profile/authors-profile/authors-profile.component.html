@@ -41,23 +41,62 @@
               </div>
           </section>
           <section class="section2">
-            <div class="titleSection2">
-              <h3 class="titleArticle">Articles</h3>
-            </div>  
-            <mat-form-field>
-              <mat-label>Choose an option</mat-label>
-              <mat-select>
-                <mat-option value="option1">Sort by: newest</mat-option>
-                <mat-option value="option2">Sort by: oldest</mat-option>
-                <mat-option value="option3">Sort by: best rating</mat-option>
-                <mat-option value="option4">Sort by: worst rating</mat-option>
-              </mat-select>
-          </mat-form-field>
-            <div class="firstArticle">
-
+            <div class="title-section2">
+              <div class="title-article">
+                <h1>Articles</h1>
+              </div>
+              <div class="sort-select">
+                <mat-form-field>
+                  <mat-label>Sort by: </mat-label>
+                  <mat-select>
+                    <mat-option value="option1">Newest</mat-option>
+                    <mat-option value="option2">Oldest</mat-option>
+                    <mat-option value="option3">Best rating</mat-option>
+                    <mat-option value="option4">Worst rating</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>            
+            <div class="first-article">
+              <div class="title-article1">
+                <h5>{{ authorData.articles[0].title }}</h5>
+              </div>
+              <div class="data-article1">
+                <p class="article-date">{{ monthNames[authorData.articles[0].date.getMonth()]}}</p>
+                <p class="article-date">{{ authorData.articles[0].date.getFullYear() }}</p>
+                <rating  class="star-rating"  [(ngModel)]="authorData.articles[0].rating" [max]="max" [readonly]="isReadonly">
+                </rating>
+              </div>
+              <div class="actual-article">
+                <div class="article-image">
+                  <img [src]="authorData.articles[1].imageUrl" alt="Article image" class="article-image1">
+                </div>
+                <div class="article-text">
+                  <p class="article-text1">{{ authorData.articles[0].summary }}</p>
+                </div>
+              </div>
             </div>
-            <div class="secondArticle">
-
+            <div class="second-article">
+              <div class="title-article1">
+                <h5>{{ authorData.articles[0].title }}</h5>
+              </div>
+              <div class="data-article1">
+                <p class="article-date">{{ monthNames[authorData.articles[0].date.getMonth()]}}</p>
+                <p class="article-date">{{ authorData.articles[0].date.getFullYear() }}</p>
+                <rating  class="star-rating"  [(ngModel)]="authorData.articles[0].rating" [max]="max" [readonly]="isReadonly">
+                </rating>
+              </div>
+              <div class="actual-article">
+                <div class="article-image">
+                  <img [src]="authorData.articles[1].imageUrl" alt="Article image" class="article-image1">
+                </div>
+                <div class="article-text">
+                  <p class="article-text1">{{ authorData.articles[0].summary }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-div">
+              <button class="view-all">Show all articles</button>
             </div>
           </section>
         </div>
