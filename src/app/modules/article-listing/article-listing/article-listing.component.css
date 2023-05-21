@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
-  height: 100% /*min-height: 100vh; Set the minimum height of the container to 100% of the viewport height */
+  height: 100%; /*min-height: 100vh; Set the minimum height of the container to 100% of the viewport height */
 }
 
 main {
@@ -11,6 +11,7 @@ main {
   margin-bottom: 3rem;
   margin-top: 3rem;
   height: 100%;
+  overflow: auto;
 }
 
 .section {
@@ -47,6 +48,8 @@ footer {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: white; /* Set the background color to white */
+  min-width: 370px;
+  min-height: 380px;
 }
 
 .article-image {
@@ -176,4 +179,17 @@ footer {
   height: 3rem;
   margin-top: 1rem;
   
+}
+
+.view-arrow {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  margin-top: 3px;
+  color: #535CE8;
+}
+
+.linkic {
+  display: flex;
+  flex-direction: row;
 }

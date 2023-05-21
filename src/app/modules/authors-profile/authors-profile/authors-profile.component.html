@@ -59,39 +59,39 @@
             </div>            
             <div class="first-article">
               <div class="title-article1">
-                <h5>{{ authorData.articles[0].title }}</h5>
+                <h5>{{ authorData.articles[firstShown].title }}</h5>
               </div>
               <div class="data-article1">
-                <p class="article-date">{{ monthNames[authorData.articles[0].date.getMonth()]}}</p>
-                <p class="article-date">{{ authorData.articles[0].date.getFullYear() }}</p>
-                <rating  class="star-rating"  [(ngModel)]="authorData.articles[0].rating" [max]="max" [readonly]="isReadonly">
+                <p class="article-date">{{ monthNames[authorData.articles[firstShown].date.getMonth()]}}</p>
+                <p class="article-date">{{ authorData.articles[firstShown].date.getFullYear() }}</p>
+                <rating  class="star-rating"  [(ngModel)]="authorData.articles[firstShown].rating" [max]="max" [readonly]="isReadonly">
                 </rating>
               </div>
               <div class="actual-article">
                 <div class="article-image">
-                  <img [src]="authorData.articles[1].imageUrl" alt="Article image" class="article-image1">
+                  <img [src]="authorData.articles[firstShown].imageUrl" alt="Article image" class="article-image1">
                 </div>
                 <div class="article-text">
-                  <p class="article-text1">{{ authorData.articles[0].summary }}</p>
+                  <p class="article-text1">{{ authorData.articles[firstShown].summary }}</p>
                 </div>
               </div>
             </div>
             <div class="second-article">
               <div class="title-article1">
-                <h5>{{ authorData.articles[0].title }}</h5>
+                <h5>{{ authorData.articles[secondShown].title }}</h5>
               </div>
               <div class="data-article1">
-                <p class="article-date">{{ monthNames[authorData.articles[0].date.getMonth()]}}</p>
-                <p class="article-date">{{ authorData.articles[0].date.getFullYear() }}</p>
-                <rating  class="star-rating"  [(ngModel)]="authorData.articles[0].rating" [max]="max" [readonly]="isReadonly">
+                <p class="article-date">{{ monthNames[authorData.articles[secondShown].date.getMonth()]}}</p>
+                <p class="article-date">{{ authorData.articles[secondShown].date.getFullYear() }}</p>
+                <rating  class="star-rating"  [(ngModel)]="authorData.articles[secondShown].rating" [max]="max" [readonly]="isReadonly">
                 </rating>
               </div>
               <div class="actual-article">
                 <div class="article-image">
-                  <img [src]="authorData.articles[1].imageUrl" alt="Article image" class="article-image1">
+                  <img [src]="authorData.articles[secondShown].imageUrl" alt="Article image" class="article-image1">
                 </div>
                 <div class="article-text">
-                  <p class="article-text1">{{ authorData.articles[0].summary }}</p>
+                  <p class="article-text1">{{ authorData.articles[secondShown].summary }}</p>
                 </div>
               </div>
             </div>
@@ -102,8 +102,66 @@
         </div>
         <div class = "rightOne">
           <section class="section4">
-        
 
+            <div class="two-buttons">
+              <button class="button1">Follow</button>
+              <button class="button2">Message</button>
+            </div>
+
+            <div class="all-ratings">
+              <div class="left-rating">
+                <div class="rating-number">
+                  {{ author.rating }}/5
+                </div>
+                <div class="rating-text">
+                  ({{ author.reviews }} reviews)
+                </div>
+                <div class="rating-stars">
+                  <rating  class="star-rating1"  [(ngModel)]="author.rating" [max]="max" [readonly]="isReadonly">
+                  </rating>
+                </div>
+              </div>
+              <div class="right-ratings">
+                <div class="five-star">
+                  <mat-progress-bar color="primary" mode="determinate" [value]="numbers[4]"></mat-progress-bar>
+                  <div style="margin-left: 5px;">5</div>
+                </div>
+                <div class="four-star">
+                  <mat-progress-bar color="primary" mode="determinate" [value]="numbers[3]"></mat-progress-bar>
+                  <div style="margin-left: 5px;">4</div>
+                </div>
+                <div class="three-star">
+                  <mat-progress-bar color="primary" mode="determinate" [value]="numbers[2]"></mat-progress-bar>
+                  <div style="margin-left: 5px;">3</div>
+                </div>
+                <div class="two-star">
+                  <mat-progress-bar color="primary" mode="determinate" [value]="numbers[1]"></mat-progress-bar>
+                  <div style="margin-left: 5px;">2</div>
+                </div>
+                <div class="one-star">
+                  <mat-progress-bar color="primary" mode="determinate" [value]="numbers[0]"></mat-progress-bar>
+                  <div style="margin-left: 5px;">1</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="response">
+              <div>Response time</div>
+              <div class="bottom-text">{{ author.responseTime }}</div>
+            </div>
+
+            <div class="certificates">
+              <div>Certificates</div>
+              <div class="bottom-text">{{ author.certificates }}</div>
+            </div>
+
+            <div class="profile-link">
+              <div>Profile link</div>
+              <div class="link-button-container">
+              <button class="link-button"><div class="link-button-container">{{ author.profileLink }}</div></button>
+              </div>
+              <div class="copy-link">Copy link</div>
+            </div>
           </section>
         </div>
     </main>

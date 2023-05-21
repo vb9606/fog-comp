@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { FormsModule } from '@angular/forms';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     FormsModule,
     RatingModule.forRoot(),
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

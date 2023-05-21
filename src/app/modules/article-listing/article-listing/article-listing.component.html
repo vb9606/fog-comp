@@ -4,7 +4,10 @@
       <section class="section">
         <div class="section-header">
           <h2 class="section__title">Recommended articles</h2>
-          <a href="#" class="view-all">View all <mat-icon>keyboard_arrow_right</mat-icon></a>
+          <div class="linkic">
+            <a href="#" class="view-all">View all</a>
+            <mat-icon class="view-arrow">keyboard_arrow_right</mat-icon>
+          </div>
         </div>
         <div class="article-box-container">
           <div class="article-box" *ngFor="let article of recommendedArticles">
@@ -18,12 +21,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      
-      <section class="section">
-        <div class="middle-link-container">
-          <a href="#" class="view-all">View all <mat-icon>keyboard_arrow_right</mat-icon></a>
         </div>
       </section>
   
@@ -43,7 +40,10 @@
       <section class="section">
         <div class="section-header">
           <h2 class="section__title">Popular articles</h2>
-          <a href="#" class="view-all">View all <mat-icon>keyboard_arrow_right</mat-icon></a>
+          <div class="linkic">
+            <a href="#" class="view-all">View all</a>
+            <mat-icon class="view-arrow">keyboard_arrow_right</mat-icon>
+          </div>
         </div>
         <div class="article-box-container">
           <div class="article-box" *ngFor="let article of popularArticles">

@@ -7,6 +7,10 @@ import { Article } from '../../../interfaces/article';
   styleUrls: ['./article-listing.component.css']
 })
 export class ArticleListingComponent {
+
+  screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
   articles: Article[] = [
     {
       title: 'The Thrill of Victory: The Best Moments in Sports History',
@@ -348,6 +352,9 @@ ngOnInit() {
     this.currentIndex = (this.currentIndex + 1) % this.articles.length;
     this.currentArticle = this.articles[this.currentIndex];
   }, 10000);
+
+  console.log(this.screenHeight);
+  console.log(this.screenWidth);
 }
 
 getRandomArticles(numArticles: number): Article[] {

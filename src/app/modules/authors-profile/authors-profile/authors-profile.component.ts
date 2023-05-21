@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-authors-profile',
@@ -18,11 +18,15 @@ export class AuthorsProfileComponent implements OnInit{
   authorData!: { author: Author; articles: Article[]; };// | undefined;
   monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
-];
+  ];
+  firstShown = 0;
+  secondShown = 1;
   
   max = 5;
   rate = 0;
   isReadonly = true;
+
+  numbers: number[] = [0,0,0,0,0];
 
   authors: Author[] = [
     {
@@ -514,6 +518,8 @@ export class AuthorsProfileComponent implements OnInit{
     console.log(this.articles.length)
 
     this.assignArticles();
+
+    this.countRatings();
   }
 
   loadAuthorData() {
@@ -550,11 +556,32 @@ export class AuthorsProfileComponent implements OnInit{
 
     if (this.authorData) {
       console.log("Author:", this.authorData.author);
-      console.log("Articles:", this.authorData.articles[0].title);
+      console.log("Articles:", this.authorData.articles);
     } else {
       console.log("Author not found in associatedData.");
     }
     
   }
+
+  countRatings() {
+    this.numbers = [0, 0, 0, 0, 0]; // Initialize the numbers array before counting ratings
+  
+    for (let i = 0; i < this.authorData.articles.length; i++) {
+      if (this.authorData.articles[i].rating > 4.5) {
+        this.numbers[4]++;
+      } else if (this.authorData.articles[i].rating > 3.5) {
+        this.numbers[3]++;
+      } else if (this.authorData.articles[i].rating > 2.5) {
+        this.numbers[2]++;
+      } else if (this.authorData.articles[i].rating > 1.5) {
+        this.numbers[1]++;
+      } else {
+        this.numbers[0]++;
+      }
+    }
+  
+    this.numbers = this.numbers.map((num) => (num / this.authorData.articles.length) * 100);
+  }
+  
   
 }
