@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import { FormsModule } from '@angular/forms';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { NgxDropzoneModule } from 'ngx-dropzone';;
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatInputModule,
     FormsModule,
     RatingModule.forRoot(),
-    MatProgressBarModule
+    MatProgressBarModule,
+    NgxDropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent]
