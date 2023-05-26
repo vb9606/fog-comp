@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Articles } from '../../../interfaces/articles';
 import { Review } from 'src/app/interfaces/review';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article-details',
@@ -302,13 +303,25 @@ export class ArticleDetailsComponent {
       }
     ];
 
+    authorId! : number 
+
     relatedArticles: Articles[];
-    currentArticle: any = this.articles[0];
 
-    currentArticleReviewes: any = this.reviews[0];
+    currentArticle: any;
+    currentArticleReviewes: any;
 
-    constructor() {
+    constructor(private route: ActivatedRoute) {
       this.relatedArticles = this.getRandomArticles(4);
+    }
+
+    ngOnInit() {
+      this.route.params.subscribe(params => {
+        this.authorId = +params['id'];
+      });
+
+      this.currentArticle = this.articles[this.authorId];
+      this.currentArticleReviewes = this.reviews[0];
+      
     }
 
     getRandomArticles(numArticles: number): Articles[] {

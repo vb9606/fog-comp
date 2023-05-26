@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Article } from 'src/app/interfaces/article';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-authors-profile',
@@ -506,9 +507,9 @@ export class AuthorsProfileComponent implements OnInit{
 
   associatedData: { author: Author, articles: Article[] }[] = [];
 
-  
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -582,6 +583,62 @@ export class AuthorsProfileComponent implements OnInit{
   
     this.numbers = this.numbers.map((num) => (num / this.authorData.articles.length) * 100);
   }
+
+  copyLink(linkButton: HTMLButtonElement) {
+    const linkText = linkButton.textContent;
   
+    if (linkText) {
+      // Create a temporary input element
+      const input = document.createElement('input');
+      input.setAttribute('value', linkText);
+      document.body.appendChild(input);
   
+      // Copy the text from the input element
+      input.select();
+      document.execCommand('copy');
+  
+      // Remove the temporary input element
+      document.body.removeChild(input);
+  
+      // Optional: Show a success message or perform other actions
+      alert('Link copied to clipboard!');
+    }
+  }
+
+  isFollowed(authorId: number): boolean {
+    // Check if the author is marked as followed in local storage
+    const followedAuthors = JSON.parse(localStorage.getItem('followedAuthors') || '{}');
+    return followedAuthors[authorId] === true;
+  }
+  
+  followAuthor(authorId: number) {
+    // Perform any necessary actions when the button is clicked
+    // For example, make an API request to update the follow status of the author
+    
+    // Mark the author as followed in local storage
+    const followedAuthors = JSON.parse(localStorage.getItem('followedAuthors') || '{}');
+    followedAuthors[authorId] = true;
+    localStorage.setItem('followedAuthors', JSON.stringify(followedAuthors));
+  
+    // Disable the button after it's clicked
+    this.disableButton(authorId);
+  }
+  
+  disableButton(authorId: number) {
+    // Disable the button by adding the 'disabled' attribute dynamically
+    const button = document.querySelector(`.button1[data-author-id="${authorId}"]`);
+    if (button) {
+      button.setAttribute('disabled', 'true');
+    }
+  }
+  
+  goToArticles(id: number) {
+
+    this.router.navigate(['authors-profile', 'articles', id]);
+  }
+
+  openTextField() {
+    alert("You can't send messages to this author!");
+  }
+
 }

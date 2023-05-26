@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { Article } from '../../../interfaces/article';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Author } from 'src/app/interfaces/author';
 
 @Component({
-  selector: 'app-article-listing-recommended',
-  templateUrl: './article-listing-recommended.component.html',
-  styleUrls: ['./article-listing-recommended.component.css']
+  selector: 'app-authors-profile-articles',
+  templateUrl: './authors-profile-articles.component.html',
+  styleUrls: ['./authors-profile-articles.component.css']
 })
-export class ArticleListingRecommendedComponent {
-
+export class AuthorsProfileArticlesComponent {
   articles: Article[] = [
     {
       title: 'The Thrill of Victory: The Best Moments in Sports History',
@@ -341,7 +342,9 @@ currentIndex = 0;
 
 nrOfStars : number = 5;
 
-constructor() {
+authorData: { author: Author; articles: Article[]; } | null = null;
+
+constructor(private route: ActivatedRoute, private router: Router) {
   this.recommendedArticles = this.getRandomArticles(4);
   this.allRecommendedArticles = this.getRandomArticles(12);
   this.popularArticles = this.getRandomArticles(4);
@@ -356,7 +359,6 @@ ngOnInit() {
     this.currentIndex = (this.currentIndex + 1) % this.articles.length;
     this.currentArticle = this.articles[this.currentIndex];
   }, 10000);
-
 }
 
 getRandomArticles(numArticles: number): Article[] {
@@ -368,7 +370,6 @@ getRandomArticles(numArticles: number): Article[] {
       randomArticles.push(randomArticle);
     }
   }
-  return randomArticles;
-}
-
+    return randomArticles;
+  }
 }

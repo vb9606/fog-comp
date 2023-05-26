@@ -96,7 +96,7 @@
               </div>
             </div>
             <div class="bottom-div">
-              <button class="view-all">Show all articles</button>
+              <button (click)="goToArticles(author.id)" class="view-all">Show all articles</button>
             </div>
           </section>
         </div>
@@ -104,8 +104,13 @@
           <section class="section4">
 
             <div class="two-buttons">
-              <button class="button1">Follow</button>
-              <button class="button2">Message</button>
+              <button class="button1" [disabled]="isFollowed(author.id)" (click)="followAuthor(author.id)">
+                {{ isFollowed(author.id) ? 'Followed' : 'Follow' }}
+              </button>
+              
+              
+              <button class="button2" (click)="openTextField()">Message</button>
+
             </div>
 
             <div class="all-ratings">
@@ -158,9 +163,11 @@
             <div class="profile-link">
               <div>Profile link</div>
               <div class="link-button-container">
-              <button class="link-button"><div class="link-button-container">{{ author.profileLink }}</div></button>
+                <button class="link-button" [disabled]="true" #linkButton>
+                  <div class="link-button-container">{{ author.profileLink }}</div>
+                </button>
               </div>
-              <div class="copy-link">Copy link</div>
+              <div class="copy-link" (click)="copyLink(linkButton)">Copy link</div>
             </div>
           </section>
         </div>

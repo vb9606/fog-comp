@@ -8,9 +8,6 @@ import { Article } from '../../../interfaces/article';
 })
 export class ArticleListingComponent {
 
-  screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
   articles: Article[] = [
     {
       title: 'The Thrill of Victory: The Best Moments in Sports History',
@@ -336,6 +333,8 @@ export class ArticleListingComponent {
 
 recommendedArticles: Article[];
 popularArticles: Article[];
+allRecommendedArticles: Article[];
+allPopularArticles: Article[];
 
 currentArticle: any = this.articles[0];
 currentIndex = 0;
@@ -344,7 +343,12 @@ nrOfStars : number = 5;
 
 constructor() {
   this.recommendedArticles = this.getRandomArticles(4);
+  this.allRecommendedArticles = this.getRandomArticles(12);
   this.popularArticles = this.getRandomArticles(4);
+  this.allPopularArticles = this.getRandomArticles(12);
+
+  //bi blo kao še kul če se nardi da niso isti čeprov zakaj pa ne,
+  //recommended bi pomoje dalo glede na keywords popular pa z najvišjim ratingom??
 }
 
 ngOnInit() {
@@ -353,8 +357,6 @@ ngOnInit() {
     this.currentArticle = this.articles[this.currentIndex];
   }, 10000);
 
-  console.log(this.screenHeight);
-  console.log(this.screenWidth);
 }
 
 getRandomArticles(numArticles: number): Article[] {

@@ -6,7 +6,6 @@ import { ArticleListingComponent } from './article-listing/article-listing.compo
 import { ArticleListingRecommendedComponent } from './article-listing-recommended/article-listing-recommended.component';
 import { ArticleListingPopularComponent } from './article-listing-popular/article-listing-popular.component';
 
-
 @NgModule({
   declarations: [
     ArticleListingComponent,
